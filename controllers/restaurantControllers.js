@@ -90,7 +90,7 @@ exports.show_new_entries = function (req, res) {
 };
 
 exports.show_edited_entry = function (req, res) {
-    res.render("newEntry", {
+    res.render("updateEntry", {
         title: "Dishes",
         user: "user",
     });

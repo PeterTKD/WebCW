@@ -4,12 +4,11 @@
 </head>
 <body>
 <h1>{{title}}</h1>
+
+
 <div class="text-right">
   <a href="/new" class="btn btn-primary">
     Write in the Menu
-  </a>
- <a href="/edit" class="btn btn-primary">
-    Edit
   </a>
 </div>
 {{#entries}}
@@ -21,6 +20,9 @@
      </p>
 <div class="card-footer">
   <p> £ <a href="/posts/{{prices}}">{{prices}}</a> Warning: {{allergyadvice}}</p>
+   <a href="/edit" class="btn btn-secondary">
+    Edit
+  </a>
 </div>
 </div>
 {{/entries}}
