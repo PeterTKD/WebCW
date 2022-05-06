@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
+    <title>Log In</title>
+    <style>
+    body {
+    margin: 0;
+    background-image: url('./../assets/lukas-blazek-f-TWhXOrLiU-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+h1 {
+    font-family: 'Lilita One', cursive;
+    color: #23335e;
+    font-style: normal;
+    font-size: xx-large;
+}
+
+p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    color: #ffffff;
+
+}
+
+.logo {
+    float: left;
+    width: 7%;
+    height: auto;
+    padding: 10px 50px;
+
+}
+
+nav {
+    float: right;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    background: #F3F3EC;
+    z-index: 1;
+}
+
+header {
+    margin-top: 0%;
+    background: #F3F3EC;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-right: 40px;
+}
+
+
+nav li {
+    display: inline-block;
+    margin: 0 50px;
+    padding-top: 60px;
+
+    position: relative;
+
+}
+
+nav a {
+    color: #23335e;
+    text-decoration: none;
+    font-family: 'Lilita One', cursive;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+nav a:hover {
+    color: #749ca0;
+}
+
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    width: 100%;
+    background-color: #749ca0;
+
+    position: absolute;
+    width: 0%;
+    transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+    width: 100%
+}
+
+.container2 {
+    position: absolute;
+    width: 840px;
+    height: 829px;
+    left: 525px;
+    top: 209px;
+    background-color:#F3F3EC;
+    border-radius: 60px;
+    text-align: center;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+
+.container3 {
+    margin-top: 100px;
+}
+
+input[type=text],
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 30px 0;
+    display: inline-block;
+    border: 0px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+label {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    color: #23335e;
+
+
+}
+
+#btn2 {
+    background-color: #23335e;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img class="logo" src="./../assets/Logo-web2.png" alt="Italian resturant logo">
+
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/menu">MENU</a></li>
+                    <li><a href="/login">LOG IN</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>  
+
+
+<div class="container2">
+<h1> Log in</h1>
+
+<div class="imgcontainer">
+    
+</div>
+
+<div class="container3">
+<form method="POST" action="/login">
+  <label for="username"><b>Username</b></label>
+  <input class="form-control" type="text" placeholder="Enter Username" name="username" required>
+
+  <label for="password"><b>Password</b></label>
+  <input class="form-control" type="password" placeholder="Enter Password (8 characters minimum)" name="pass" minlength="8" required>
+      
+  <button id="login" type="submit" value="Login" class="btn btn-primary">Log in</button>
+
+ 
+    
+  <label>
+    <input type="checkbox" checked="checked" name="remember" > Remember me
+  </label>
+</form>
+
+ <a href="/register" target="_parent"> <button id="btn2"  value="Register">Register</button></a> 
+
+</div>
+
+
+
+</div>
+
+        
+</body>
+
+
+
+</html>

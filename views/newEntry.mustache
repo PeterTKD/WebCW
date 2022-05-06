@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+{{>header}}
+</head>
+<body class="container">
+<h2>Write a new entry</h2>
+    <form method="post" role="form" action="/new">
+        <div class="form-group">
+            <label for="prices">Price</label>
+            <input type="text" class="form-control" id="prices" name="prices" placeholder="Enter price" required>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter the name of the dish" required>
+        </div>
+        <div class="form-group">
+            <label for="description">Enter description</label>
+            <textarea class="form-control" id="description" name="description" placeholder="Enter the description here." rows="3"    required>
+            </textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="allergyadvice">Enter allergy advice</label>
+            <textarea class="form-control" id="allergyadvice" name="allergyadvice" placeholder="Enter the allerg yadvice here." rows="3"    required>
+            </textarea>
+        </div>    
+
+
+        <div class="form-group">
+            <input type="submit" value="Post dish" class="btn btn-primary">
+        </div>
+    </form>
+</body>
+</html>
