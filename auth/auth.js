@@ -13,7 +13,7 @@ exports.login = function (req, res, next) {
     }
     if (!user) {
       console.log("user ", username, " not found");
-      return res.render("user/register");
+      return res.render("registerpage");
     }
     //compare provided password with stored password
     bcrypt.compare(password, user.password, function (err, result) {
@@ -25,7 +25,8 @@ exports.login = function (req, res, next) {
         res.cookie("jwt", accessToken);
         next();
       } else {
-        return res.render("user/login"); //res.status(403).send();
+        console.log('error handling prices posts')
+        return res.render("loginpage"); //res.status(403).send();
       }
     });
   });

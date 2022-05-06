@@ -144,6 +144,16 @@ button {
     width: 100%;
 }
 
+#btn1{
+        background-color: #04AA6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
 label {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: larger;
@@ -196,35 +206,29 @@ span.psw {
 <div class="imgcontainer">
     
 </div>
-
-<div class="container3">
-<form method="POST" action="/login">
-  <label for="username"><b>Username</b></label>
-  <input class="form-control" type="text" placeholder="Enter Username" name="username" required>
-
-  <label for="password"><b>Password</b></label>
-  <input class="form-control" type="password" placeholder="Enter Password (8 characters minimum)" name="pass" minlength="8" required>
-      
-  <button id="login" type="submit" value="Login" class="btn btn-primary">Log in</button>
-
- 
-    
-  <label>
-    <input type="checkbox" checked="checked" name="remember" > Remember me
-  </label>
-</form>
-
- <a href="/register" target="_parent"> <button id="btn2"  value="Register">Register</button></a> 
-
-</div>
-
-
-
-</div>
-
-        
+        <form method="POST" action="/login">
+            <div class="form-group">
+                <label for="username" class="col-sm-2 col-formlabel">
+                    User Name
+                </label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control"  id="username" name="username" placeholder="username">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password" class="col-sm-2 col-formlabel">
+                    Password
+                </label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control"  id="password" name="password"placeholder="password">
+                </div>
+            </div>
+            <input type="submit" id="btn1" class="btn btn-primary" value="Sign In">
+        </form>
+        <label>
+            <input type="checkbox" checked="checked" name="remember" > Remember me
+        </label>
+        <a href="/register" target="_parent"> <button id="btn2"  value="Register">Register</button></a> 
+    </div>
 </body>
-
-
-
 </html>

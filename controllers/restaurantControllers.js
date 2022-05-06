@@ -61,19 +61,18 @@ exports.landing_page_json = function (req, res) {
 }
 
 
-
-exports.test_page = function (req, res) {
-    db.getAllEntries()
-        .then((list) => {
-            res.render('menu', {
-                'entries': list
-            });
-            console.log('promise resolved');
-        })
-        .catch((err) => {
-            console.log('promise rejected', err);
-        })
-}
+// exports.test_page = function (req, res) {
+//     db.getAllEntries()
+//         .then((list) => {
+//             res.render('menu', {
+//                 'entries': list
+//             });
+//             console.log('promise resolved');
+//         })
+//         .catch((err) => {
+//             console.log('promise rejected', err);
+//         })
+// }
 
 exports.login_page = function (req, res) {
     res.render('loginpage')
@@ -85,10 +84,17 @@ exports.register_page = function (req, res) {
 
 exports.show_new_entries = function (req, res) {
     res.render("newEntry", {
-      title: "Dishes",
-      user: "user",
+        title: "Dishes",
+        user: "user",
     });
-  };
+};
+
+exports.show_edited_entry = function (req, res) {
+    res.render("newEntry", {
+        title: "Dishes",
+        user: "user",
+    });
+};
 
 
 exports.post_new_entry = function (req, res) {
@@ -101,6 +107,15 @@ exports.post_new_entry = function (req, res) {
     res.redirect("/loggedIn");
 }
 
+exports.edit_entry = function (req, res) {
+    console.log('processing edit_entry controller');
+    if (!req.body.prices) {
+        response.status(400).send("Entries must have prices.");
+        return;
+    }
+    db.editEntry(req.body.prices, req.body.name, req.body.description, req.body.allergyadvice);
+    res.redirect("/loggedIn");
+}
 
 
 exports.show_user_entries = function (req, res) {
@@ -119,11 +134,10 @@ exports.show_user_entries = function (req, res) {
 
 
 exports.handle_login = function (req, res) {
-   
     res.render("newEntry", {
         title: "Dishes",
         user: "user"
-      });
+    });
 };
 
 
